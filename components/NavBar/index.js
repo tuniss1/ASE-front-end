@@ -55,6 +55,11 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="menu-items">
+            <Link href="/accomodations" passHref>
+              <div className={classNames('title', { isChosen: router.asPath === '/accomodations' })}>Accomodation</div>
+            </Link>
+          </div>
+          <div className="menu-items">
             <div className="title">About us</div>
           </div>
         </div>

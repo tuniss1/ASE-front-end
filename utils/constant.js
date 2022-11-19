@@ -25,6 +25,10 @@ export const ORDER_TYPE = {
   SINGLE: 1,
   LIST: 2,
 }
+export const ACCOMODATION_TYPE = {
+  SINGLE: 1,
+  LIST: 2,
+}
 export const ORDER_STATUS = {
   ALL: -1,
   PENDING: 0,
