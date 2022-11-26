@@ -9,7 +9,7 @@ export default css`
   nav.top-navbar-wrapper {
     position: sticky;
     top: 0;
-    z-index: 500;
+    z-index: 600;
     background: white;
     .navbar-container {
       width: 90%;
@@ -20,7 +20,7 @@ export default css`
       padding: 20px 0;
 
       .image-logo {
-        height: 40px;
+        height: 50px;
         img {
           height: 100%;
         }

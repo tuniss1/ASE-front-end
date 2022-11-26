@@ -40,7 +40,7 @@ const NavBar = () => {
     <nav className="top-navbar-wrapper">
       <div className="navbar-container">
         <div className="image-logo">
-          <Image src="/images/logo.png" alt="companyLogo" loading="lazy" width={120} height={40} />
+          <Image src="/images/Logo-ASE_black.png" alt="companyLogo" loading="lazy" width={220} height={60} />
         </div>
 
         <div className="menus">
