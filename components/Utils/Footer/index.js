@@ -59,11 +59,11 @@ const Footer = () => {
           path: '#',
         },
         {
-          name: 'Blogs',
+          name: 'Accomodation',
           path: '#',
         },
         {
-          name: 'Checkout',
+          name: 'About us',
           path: '#',
         },
       ],
@@ -77,17 +77,12 @@ const Footer = () => {
           <div className="brand-logo">
             <Image
               className="logo"
-              src="/images/logo-white.svg"
+              src="/images/Logo-ASE.svg"
               alt="companyLogo"
               width={300}
               height={80}
               objectFit={'contain'}
             />
-          </div>
-          <div className="brand-desc">
-            Release with the desire to bring customers professionalism, prestige with beautiful beauty, we bring the
-            best experience for our pets. With many years of experience in the pet service industry including: Pet Spa,
-            Pet Hotel, Pet Home Service, ...
           </div>
           <div className="brand-address">
             <Image src="/icons/Address.svg" alt="address" height={40} width={40} objectFit="contain" />
@@ -109,7 +104,7 @@ const Footer = () => {
                 <h1>{ele.title}</h1>
                 {ele.items.map((item, idx) => (
                   <Link href={item.path} key={idx}>
-                    <a>{item.name}</a>
+                    <p>{item.name}</p>
                   </Link>
                 ))}
               </div>
