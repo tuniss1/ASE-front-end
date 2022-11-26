@@ -6,7 +6,7 @@ import { ACCOMODATION_TYPE } from 'utils/constant'
 import NavBar from 'components/NavBar'
 import Footer from 'components/Utils/Footer'
 
-const Accomodation = ({ accomodationType, accomodationList, categoryList = [], accomodationDetail }) => {
+const Accomodation = ({ accomodationType, accomodationList, categoryList = [], data: accomodationDetail }) => {
   return (
     <div className="accomodation-wrapper">
       <NavBar />
@@ -15,7 +15,7 @@ const Accomodation = ({ accomodationType, accomodationList, categoryList = [], a
         accomodationName={accomodationType === ACCOMODATION_TYPE.SINGLE ? accomodationDetail.name : ''}
       />
       {accomodationType === ACCOMODATION_TYPE.SINGLE ? (
-        <AccomodationSingle isModel={false} accomodationSingleData={accomodationDetail} />
+        <AccomodationSingle isModel={false} accomodationDetail={accomodationDetail} />
       ) : (
         <AccomodationList accomodationList={accomodationList} categoryList={categoryList} />
       )}

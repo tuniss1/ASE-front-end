@@ -1,42 +1,31 @@
 import { useRouter } from 'next/router'
-import Product from 'components/Product'
 import { PRODUCT_TYPE } from 'utils/constant'
-import axios from 'axios'
+import AccomodationSingle from 'components/Accomodation/AccomodationSingle'
 
-const ProductSinglePage = ({ productData }) => {
+const ProductSinglePage = ({ data }) => {
   const router = useRouter()
   if (router.isFallback) {
     return <h1>Loading ...</h1>
   }
 
-  return <Product productType={PRODUCT_TYPE.SINGLE} productData={productData} />
+  return <AccomodationSingle productType={PRODUCT_TYPE.SINGLE} data={data} />
 }
 
-export async function getStaticPaths() {
-  // const pListIds = await axios.get(`${process.env.HOST_API}/product/listId`).then((res) => res.data)
-
-  return {
-    paths: pListIds.map((id) => ({ params: { id } })),
-    fallback: 'blocking',
-  }
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { id } = params
 
   // const productData = await axios.get(`${process.env.HOST_API}/product/${id}`).then((res) => res.data.productDetail)
 
-  if (!productData) {
-    return {
-      notFound: true,
-    }
-  }
+  // if (!productData) {
+  //   return {
+  //     notFound: true,
+  //   }
+  // }
 
   return {
     props: {
-      productData,
+      data: {},
     },
-    revalidate: 10,
   }
 }
 

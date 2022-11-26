@@ -9,7 +9,7 @@ import { formatVNprice } from 'utils/function'
 import { useDispatch } from 'react-redux'
 import { addItem } from 'store/reducers/checkoutSlice'
 
-const AccomodationSingle = ({ isModel, accomodationSingleData }) => {
+const AccomodationSingle = ({ isModel, accomodationDetail }) => {
   const [dynamicWidth, setDynamicWidth] = useState()
   const [productQuantity, setProductQuantity] = useState(1)
   const dispatch = useDispatch()
