@@ -151,7 +151,7 @@ const FilterInput = ({
           </div>
           <Button
             sx={{
-              background: '#1E7E70',
+              background: '#061341',
               padding: '8px 15px',
               position: 'absolute',
               bottom: 0,
@@ -159,7 +159,7 @@ const FilterInput = ({
               transform: 'translateX(-50%) translateY(50%)',
               fontSize: 20,
               '&:hover': {
-                background: '#27a592',
+                background: '#061341',
               },
             }}
             variant="contained"

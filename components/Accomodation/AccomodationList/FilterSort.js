@@ -52,8 +52,8 @@ const FilterSort = ({ filter, handleChangeSort }) => {
   }, [open])
 
   return (
-    <div>
-      <Button
+    <div >
+      <Button  
         ref={anchorRef}
         id="composition-button"
         aria-controls={open ? 'composition-menu' : undefined}
@@ -61,7 +61,7 @@ const FilterSort = ({ filter, handleChangeSort }) => {
         aria-haspopup="true"
         onClick={handleToggle}
         variant="contained"
-        sx={{ display: 'flex', justifyContent: 'space-between', minWidth: 140 }}
+        sx={{ display: 'flex', justifyContent: 'space-between', minWidth: 140, background: 'rgba(6, 19, 65, 0.58)','&:hover':{background: 'rgba(6, 19, 65, 0.58)'} }}
         endIcon={<ArrowDropDownIcon />}
       >
         {filter.sort.label}
@@ -73,15 +73,17 @@ const FilterSort = ({ filter, handleChangeSort }) => {
         placement="bottom-start"
         transition
         disablePortal
+        
       >
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}
             style={{
               transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom',
+              
             }}
           >
-            <Paper>
+            <Paper style={{background: 'rgba(6, 19, 65, 0.58)'}}>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}
@@ -90,7 +92,8 @@ const FilterSort = ({ filter, handleChangeSort }) => {
                   onKeyDown={handleListKeyDown}
                 >
                   {sortItemList.map((item) => (
-                    <MenuItem
+                    <MenuItem 
+                    
                       onClick={(event) => {
                         handleChangeSort({}, item)
                         handleClose(event)

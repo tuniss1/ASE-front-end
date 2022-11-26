@@ -47,7 +47,7 @@ export default css`
               cursor: pointer;
               transition: all 0.2s ease-in-out;
               //padding: 20px;
-              background: #1e7e70;
+              background: #796D6D;
               &:hover {
                 box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px 0px;
               }

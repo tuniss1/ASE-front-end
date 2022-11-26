@@ -13,7 +13,7 @@ const FeaturedProduct = ({ trendingProducts }) => (
     <div className="btn-wrapper">
       {/* <button> */}
       <Link href="/accomodations">
-        <a>
+        <a style={{backgroundColor:'#796D6D'}}>
           <button>Explore more</button>
         </a>
       </Link>

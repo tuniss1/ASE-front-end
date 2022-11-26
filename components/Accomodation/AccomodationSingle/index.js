@@ -8,8 +8,10 @@ import { MIN_DESKTOP_WIDTH, MODEL_WIDTH_ABOVE_DESKTOP, MODEL_WIDTH_BELOW_DESKTOP
 import { formatVNprice } from 'utils/function'
 import { useDispatch } from 'react-redux'
 import { addItem } from 'store/reducers/checkoutSlice'
+import NavBar from 'components/NavBar'
+import Footer from 'components/Utils/Footer'
 
-const AccomodationSingle = ({ isModel, accomodationDetail }) => {
+const AccomodationSingle = ({ isModel, accomodationSingleData }) => {
   const [dynamicWidth, setDynamicWidth] = useState()
   const [productQuantity, setProductQuantity] = useState(1)
   const dispatch = useDispatch()
@@ -29,7 +31,13 @@ const AccomodationSingle = ({ isModel, accomodationDetail }) => {
     return window.removeEventListener('resize', handleWindowChange)
   }, [isModel])
 
-  return <h1>Accomodation Single</h1>
+  return (
+    <div>
+      <NavBar />
+      <p>abc xyz</p>
+      <Footer />
+    </div>
+  )
 }
 
 export default AccomodationSingle

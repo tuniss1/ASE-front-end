@@ -5,11 +5,13 @@ export default css`
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100vh;
+    background: #F0EFE5;
   }
   .home-wrapper {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100vh;
+    
   }
 
   .bg {

@@ -7,6 +7,7 @@ export default css`
     max-width: 1440px;
     overflow-x: hidden;
     margin: 0 auto;
+    background: #F0EFE5;
 
     .elementor-row {
       display: grid;
@@ -19,6 +20,7 @@ export default css`
         padding: 0 20px;
 
         .filter-content {
+          
           margin-top: 20px;
 
           &:first-child {
@@ -79,7 +81,7 @@ export default css`
           grid-template-columns: 70% 30%;
           margin: 0 30px;
           position: relative;
-          background: rgba(30, 126, 112, 0.34);
+          background: rgba(6, 19, 65, 0.34);
           border-radius: 10px;
         }
 
@@ -98,7 +100,7 @@ export default css`
             height: auto;
             position: relative;
             min-height: 100px;
-
+            
             .title {
               font-size: 20px;
               font-weight: 700;
@@ -128,6 +130,7 @@ export default css`
           margin-top: 50px;
           padding-top: 10px;
           column-gap: 8px;
+          
         }
       }
     }

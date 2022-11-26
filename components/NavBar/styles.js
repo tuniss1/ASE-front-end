@@ -10,7 +10,7 @@ export default css`
     position: sticky;
     top: 0;
     z-index: 600;
-    background: white;
+    background: #F0EFE5;
     .navbar-container {
       width: 90%;
       margin: 0 auto;

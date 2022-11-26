@@ -6,6 +6,7 @@ export default css`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #F0EFE5;
   }
   h1.title {
     font-family: Ubuntu;
@@ -41,7 +42,7 @@ export default css`
     button {
       width: 100%;
       padding: 11px 15px;
-      background: #1e7e70;
+      background: #061341;
       border-radius: 4px;
       border: 1px solid #1e7e70;
       cursor: pointer;

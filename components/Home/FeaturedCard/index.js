@@ -42,7 +42,7 @@ const FeaturedCard = ({ trendingProducts }) => {
                     </div>
                     <div
                       style={{
-                        backgroundColor: '1E7E70',
+                        backgroundColor:  '#796D6D',
                         padding: '10px 8px',
                         justifyContent: 'space-between',
                         flexDirection: 'row',
