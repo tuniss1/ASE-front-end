@@ -5,7 +5,7 @@ import { ACCOMODATION_TYPE } from 'utils/constant'
 const Title = ({ accomodationType, accomodationName }) => {
   return (
     <div className="title-page">
-      <div className="container">
+      {/* <div className="container">
         <div className="row">
           <div className="col-md-6 inner-title-page">
             <h1>Shop</h1>
@@ -20,7 +20,7 @@ const Title = ({ accomodationType, accomodationName }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <style jsx>{styles}</style>
     </div>
   )

@@ -2,9 +2,12 @@ import css from 'styled-jsx/css'
 
 export default css`
   .title-page {
-    background-image: url(/banner.png);
-    background-position: center right;
-    background-repeat: no-repeat;
+    background-image: url(/banners/image60.png);
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    background-position: 60% 0;
+    margin-bottom: 40px;
   }
 
   .container {

@@ -24,7 +24,7 @@ const CustomPrevArrow = (props) => {
 
 const HeaderBanner = () => {
   const banners = [
-    { id: 1, src: '/banners/Carousel.png', position: 'center' },
+    { id: 1, src: '/banners/image60.png', position: 'center' },
     { id: 2, src: '/banners/image73.png', position: '0 90%' },
     { id: 3, src: '/banners/image69.png', position: '0 50%' },
     { id: 4, src: '/banners/image70.png', position: '0 80%' },
