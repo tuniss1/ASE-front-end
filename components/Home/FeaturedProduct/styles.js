@@ -22,6 +22,9 @@ export default css`
     color: #796d6d;
   }
   .featured-products {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 32px;
     width: 100%;
     display: flex;
     align-items: center;

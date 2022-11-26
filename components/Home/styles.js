@@ -13,8 +13,8 @@ export default css`
   }
 
   .bg {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 80px;
+    margin-bottom: 120px;
     width: 100%;
     min-height: 315px;
     background: url('/post-bg.png');
