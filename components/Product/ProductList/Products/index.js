@@ -56,7 +56,7 @@ const Products = ({ productListData, query, setQuery }) => {
             </select>
           </form>
           <ul className="products">
-            {data.map((product, idx) => (
+            {/* {data.map((product, idx) => (
               <li className="product" key={idx}>
                 <div className="product-img">
                   <Image src={product.images[0].url} alt={`Images of ${product.name}`} width={900} height={900} />
@@ -71,7 +71,7 @@ const Products = ({ productListData, query, setQuery }) => {
                   <span className="price">{`${product.price}$`}</span>
                 </div>
               </li>
-            ))}
+            ))} */}
           </ul>
           <nav className="woocommerce-pagination">
             <ul>

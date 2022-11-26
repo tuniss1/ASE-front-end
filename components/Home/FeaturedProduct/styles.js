@@ -28,4 +28,34 @@ export default css`
     justify-content: center;
     flex-wrap: wrap;
   }
+
+  .btn-wrapper {
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 32px;
+    margin: 0 auto;
+
+    button {
+      width: 100%;
+      padding: 11px 15px;
+      background: #1e7e70;
+      border-radius: 4px;
+      border: 1px solid #1e7e70;
+      cursor: pointer;
+      color: white;
+      font-size: 32px;
+      text-decoration: none;
+      transition: all 0.3s;
+
+      &:hover {
+        background: white;
+        border-color: #1e7e70;
+        color: #1e7e70;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
 `

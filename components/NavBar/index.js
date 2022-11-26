@@ -49,11 +49,11 @@ const NavBar = () => {
               <div className={classNames('title', { isChosen: router.asPath === '/' })}>Home</div>
             </Link>
           </div>
-          <div className="menu-items">
+          {/* <div className="menu-items">
             <Link href="/products" passHref>
               <div className={classNames('title', { isChosen: router.asPath === '/products' })}>Product</div>
             </Link>
-          </div>
+          </div> */}
           <div className="menu-items">
             <Link href="/accomodations" passHref>
               <div className={classNames('title', { isChosen: router.asPath === '/accomodations' })}>Accomodation</div>

@@ -7,8 +7,8 @@ import { useDispatch } from 'react-redux'
 import { setUser } from 'store/reducers/userSlice'
 import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
-import axios from 'axios'
 import { MdEmail, MdLock } from 'react-icons/md'
+import NavBar from 'components/NavBar'
 
 function SignInForm({ formStyle }) {
   const dispatch = useDispatch()
@@ -77,7 +77,15 @@ function SignInForm({ formStyle }) {
           style={formStyle}
         >
           <div className="icon-lg">
-            <Image src="/images/auth-icon.png" width={128} height={128} alt="Icon" />
+            <Image src="/sign-in.png" width={516} height={99} alt="Icon" />
+          </div>
+          <div className="pagination">
+            <Link href="/sign-up">
+              <div>Register</div>
+            </Link>
+            <Link href="/sign-in">
+              <div className="current">Login</div>
+            </Link>
           </div>
           <div className="form-container">
             <div className="input">
@@ -150,10 +158,17 @@ function SignInForm({ formStyle }) {
 const SignIn = () => {
   return (
     <div className="wrapper">
+      <NavBar />
+      {/* <div style={{ position: 'relative', width: '100%', height: '100%' }}> */}
       <div className="round-layer">
-        <Image src="/images/sign-in-background.jpg" layout="fill" objectFit="cover" alt="background" />
+        <Image src="/bg.png" width={864} height={967} alt="background" />
       </div>
-      <SignInForm formStyle={{}} />
+      <div className="form-bg">
+        <div style={{ position: 'relative', height: '100%' }}>
+          <SignInForm formStyle={{}} />
+        </div>
+      </div>
+      {/* </div> */}
       <style jsx>{styles}</style>
     </div>
   )

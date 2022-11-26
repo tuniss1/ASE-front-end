@@ -10,6 +10,7 @@ import { setUser } from 'store/reducers/userSlice'
 import Cookies from 'js-cookie'
 import axios from 'axios'
 import { MdEmail, MdLock, MdPerson } from 'react-icons/md'
+import NavBar from 'components/NavBar'
 
 const SignUp = () => {
   const dispatch = useDispatch()
@@ -39,167 +40,181 @@ const SignUp = () => {
 
   return (
     <div className="wrapper">
+      <NavBar />
       <div className="round-layer">
-        <Image src="/images/sign-in-background.jpg" layout="fill" objectFit="cover" alt="background" />
+        <Image src="/bg.png" width={864} height={967} alt="background" />
       </div>
-      <Formik
-        validationSchema={USER_SCHEMA}
-        initialValues={{
-          firstName: '',
-          lastName: '',
-          email: '',
-          password: '',
-          passwordConfirm: '',
-        }}
-        onSubmit={async (values, { setSubmitting, resetForm }) => {
-          try {
-            // const registerData = await axios
-            //   .post('http://localhost:3333/auth/signup', {
-            //     firstName: values.firstName,
-            //     lastName: values.lastName,
-            //     email: values.email,
-            //     password: values.password,
-            //   })
-            //   .then((res) => res.data)
+      <div className="form-bg">
+        <div style={{ position: 'relative', height: '100%' }}>
+          <Formik
+            validationSchema={USER_SCHEMA}
+            initialValues={{
+              firstName: '',
+              lastName: '',
+              email: '',
+              password: '',
+              passwordConfirm: '',
+            }}
+            onSubmit={async (values, { setSubmitting, resetForm }) => {
+              try {
+                // const registerData = await axios
+                //   .post('http://localhost:3333/auth/signup', {
+                //     firstName: values.firstName,
+                //     lastName: values.lastName,
+                //     email: values.email,
+                //     password: values.password,
+                //   })
+                //   .then((res) => res.data)
 
-            if (registerData) {
-              const userInfo = {
-                id: registerData.user.id,
-                username: registerData.user.username,
-                firstName: registerData.user.firstName,
-                lastName: registerData.user.lastName,
-                token: registerData.accessToken,
+                if (registerData) {
+                  const userInfo = {
+                    id: registerData.user.id,
+                    username: registerData.user.username,
+                    firstName: registerData.user.firstName,
+                    lastName: registerData.user.lastName,
+                    token: registerData.accessToken,
+                  }
+                  Cookies.set('user', JSON.stringify(userInfo), { expires: registerData.expiredIn })
+                  dispatch(setUser(userInfo))
+                  router.push('/')
+                }
+              } catch (e) {
+                console.log(e)
               }
-              Cookies.set('user', JSON.stringify(userInfo), { expires: registerData.expiredIn })
-              dispatch(setUser(userInfo))
-              router.push('/')
-            }
-          } catch (e) {
-            console.log(e)
-          }
-          setSubmitting(false)
-          resetForm()
-        }}
-      >
-        {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
-          <form name="sign-in" className="form-wrapper" encType="multipart/form-data" onSubmit={handleSubmit}>
-            <div className="icon-lg">
-              <Image src="/images/auth-icon.png" width={128} height={128} alt="Icon" />
-            </div>
-            <div className="form-container">
-              <div className="input">
-                <div className="icon-sm">
-                  <MdPerson fontSize={24} />
+              setSubmitting(false)
+              resetForm()
+            }}
+          >
+            {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+              <form name="sign-in" className="form-wrapper" encType="multipart/form-data" onSubmit={handleSubmit}>
+                <div className="icon-lg">
+                  <Image src="/sign-up.png" width={622} height={128} alt="Icon" />
                 </div>
-                <input
-                  type="text"
-                  name="firstName"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.firstName}
-                  placeholder="Enter first name"
-                />
-              </div>
-              {touched.firstName && errors.firstName && (
-                <div className="error">
-                  <p>{errors.firstName}</p>
+                <div className="pagination">
+                  <Link href="/sign-up">
+                    <div className="current">Register</div>
+                  </Link>
+                  <Link href="/sign-in">
+                    <div>Login</div>
+                  </Link>
                 </div>
-              )}
-              <div className="input">
-                <div className="icon-sm">
-                  <MdPerson fontSize={24} />
-                </div>
-                <input
-                  type="text"
-                  name="lastName"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.lastName}
-                  placeholder="Enter last name"
-                />
-              </div>
-              {touched.lastName && errors.lastName && (
-                <div className="error">
-                  <p>{errors.lastName}</p>
-                </div>
-              )}
+                <div className="form-container">
+                  <div className="input">
+                    <div className="icon-sm">
+                      <MdPerson fontSize={24} />
+                    </div>
+                    <input
+                      type="text"
+                      name="firstName"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.firstName}
+                      placeholder="Enter first name"
+                    />
+                  </div>
+                  {touched.firstName && errors.firstName && (
+                    <div className="error">
+                      <p>{errors.firstName}</p>
+                    </div>
+                  )}
+                  <div className="input">
+                    <div className="icon-sm">
+                      <MdPerson fontSize={24} />
+                    </div>
+                    <input
+                      type="text"
+                      name="lastName"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.lastName}
+                      placeholder="Enter last name"
+                    />
+                  </div>
+                  {touched.lastName && errors.lastName && (
+                    <div className="error">
+                      <p>{errors.lastName}</p>
+                    </div>
+                  )}
 
-              <div className="input">
-                <div className="icon-sm">
-                  <MdEmail fontSize={24} />
-                </div>
-                <input
-                  type="text"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  placeholder="Enter email"
-                />
-              </div>
-              {touched.email && errors.email && (
-                <div className="error">
-                  <p>{errors.email}</p>
-                </div>
-              )}
-              <div className="input">
-                <div className="icon-sm">
-                  <MdLock fontSize={24} />
-                </div>
-                <input
-                  type="password"
-                  name="password"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                  placeholder="Enter password"
-                />
-              </div>
-              {touched.password && errors.password && (
-                <div className="error">
-                  <p>{errors.password}</p>
-                </div>
-              )}
+                  <div className="input">
+                    <div className="icon-sm">
+                      <MdEmail fontSize={24} />
+                    </div>
+                    <input
+                      type="text"
+                      name="email"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.email}
+                      placeholder="Enter email"
+                    />
+                  </div>
+                  {touched.email && errors.email && (
+                    <div className="error">
+                      <p>{errors.email}</p>
+                    </div>
+                  )}
+                  <div className="input">
+                    <div className="icon-sm">
+                      <MdLock fontSize={24} />
+                    </div>
+                    <input
+                      type="password"
+                      name="password"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.password}
+                      placeholder="Enter password"
+                    />
+                  </div>
+                  {touched.password && errors.password && (
+                    <div className="error">
+                      <p>{errors.password}</p>
+                    </div>
+                  )}
 
-              <div className="input">
-                <div className="icon-sm">
-                  <MdLock fontSize={24} />
+                  <div className="input">
+                    <div className="icon-sm">
+                      <MdLock fontSize={24} />
+                    </div>
+                    <input
+                      type="password"
+                      name="passwordConfirm"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.passwordConfirm}
+                      placeholder="Enter confirm password"
+                    />
+                  </div>
+                  {touched.passwordConfirm && errors.passwordConfirm && (
+                    <div className="error">
+                      <p>{errors.passwordConfirm}</p>
+                    </div>
+                  )}
                 </div>
-                <input
-                  type="password"
-                  name="passwordConfirm"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.passwordConfirm}
-                  placeholder="Enter confirm password"
-                />
-              </div>
-              {touched.passwordConfirm && errors.passwordConfirm && (
-                <div className="error">
-                  <p>{errors.passwordConfirm}</p>
-                </div>
-              )}
-            </div>
-            <div className="form-event">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="button"
-                style={{ cursor: isSubmitting ? 'not-allowed' : 'pointer' }}
-              >
-                REGISTER
-              </button>
+                <div className="form-event">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="button"
+                    style={{ cursor: isSubmitting ? 'not-allowed' : 'pointer' }}
+                  >
+                    REGISTER
+                  </button>
 
-              <p className="sign-in">
-                Already have an account?{' '}
-                <Link href="/sign-in">
-                  <a>Sign in here!</a>
-                </Link>
-              </p>
-            </div>
-          </form>
-        )}
-      </Formik>
+                  <p className="sign-in">
+                    Already have an account?{' '}
+                    <Link href="/sign-in">
+                      <a>Sign in here!</a>
+                    </Link>
+                  </p>
+                </div>
+              </form>
+            )}
+          </Formik>
+        </div>
+      </div>
+
       <style jsx>{styles}</style>
     </div>
   )
